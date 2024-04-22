@@ -23,7 +23,7 @@ const Select: React.FC<IProps> = ({ label, options, defaultValue, handleChange, 
         required={required}
       >
         <option value="">{label}</option>
-        {options.map((option, index) => (
+        {options?.map((option, index) => (
           <option key={index} value={option}>
             {option}
           </option>

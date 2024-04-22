@@ -33,7 +33,7 @@ export default async function submitForm(req: NextApiRequest, res: NextApiRespon
 
   try {
     //insert in batches table
-    const formEntry = await prisma.Batches.create({
+    const formEntry = await prisma.batches.create({
       data: {
         model: req.body.model,
         licenseLevel: req.body.licenseLevel,
@@ -49,7 +49,7 @@ export default async function submitForm(req: NextApiRequest, res: NextApiRespon
     //Create entries in the 'MachineNumbers' table
     const machineNumberEntries = await Promise.all(
       serialNumbers.map((serialNumber: any) =>
-        prisma.MachineNumber.create({
+        prisma.machineNumber.create({
           data: {
             serialNumber: serialNumber,
             batch: { connect: { id: formEntry.id } },

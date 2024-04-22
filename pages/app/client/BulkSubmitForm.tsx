@@ -1,7 +1,14 @@
 import { useState } from 'react';
-import { FormData } from '../types';
 import Select from './components/Select';
 import axios from 'axios';
+
+interface FormData {
+  model: string;
+  licenseLevel: number;
+  quantity: string;
+  comment: string;
+  formDate: string;
+}
 
 const BulkSubmitForm: React.FC = () => {
   // Get the current date in the format YYYY-MM-DD
