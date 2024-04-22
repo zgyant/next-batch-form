@@ -1,0 +1,26 @@
+version: '1.0'
+
+services:
+  postgres-db:
+    image: postgres:16
+    restart: always
+    container_name: postgres-db
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  next:
+    build: .
+    container_name: web-app
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - postgres-db
+
+volumes:
+  postgres_data:

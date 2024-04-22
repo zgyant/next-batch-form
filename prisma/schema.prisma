@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+//define Batches table
+model Batches {
+  id           Int      @id @default(autoincrement())
+  model        String
+  licenseLevel Int
+  quantity     String
+  comment String
+  formDate String
+
+  machineNumbers MachineNumber[]
+}
+
+//define MachineNumber table
+model MachineNumber {
+  id           Int      @id @default(autoincrement())
+  serialNumber String   @unique
+  batch        Batches    @relation(fields: [batchId], references: [id])
+  batchId      Int
+}

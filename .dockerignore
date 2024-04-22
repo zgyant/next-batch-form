@@ -1,0 +1,5 @@
+node_modules
+.gitignore
+.next
+postgres_data
+.env
