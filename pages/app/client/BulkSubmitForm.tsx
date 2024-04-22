@@ -83,7 +83,7 @@ const BulkSubmitForm: React.FC = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-[500px]">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <Select defaultValue='' handleChange={(e) => handleSelectChange('model', e)} label='Model' options={['Model 1', 'Model 2', 'Model 3']} required/>
         <input type="date" id="formDate" name="formDate" value={formData.formDate} min="2018-01-01" max="2030-12-31" onChange={handleChange} className='p-2 rounded-md' required/>
         <input type="number" id="quantity" name="quantity" value={formData.quantity} placeholder='Quantity' onChange={handleChange} className='p-2 rounded-md' required/>
