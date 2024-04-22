@@ -4,6 +4,9 @@ import Select from './components/Select';
 import axios from 'axios';
 
 const BulkSubmitForm: React.FC = () => {
+  // Get the current date in the format YYYY-MM-DD
+  const currentDate = new Date().toISOString().split('T')[0];
+
   /**
    * default state
    */
@@ -11,7 +14,7 @@ const BulkSubmitForm: React.FC = () => {
     model: '',
     licenseLevel: 0,
     quantity: '',
-    formDate: '',
+    formDate: currentDate,
     comment: '',
   });
 
@@ -65,7 +68,7 @@ const BulkSubmitForm: React.FC = () => {
         model: '',
         licenseLevel: 0,
         quantity: '0',
-        formDate: '',
+        formDate: currentDate,
         comment: '',
       });
     } catch (error) {

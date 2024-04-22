@@ -26,7 +26,7 @@ function generateSerialNumbers(quantity:number) {
  * @returns 
  */
 export default async function submitForm(req: NextApiRequest, res: NextApiResponse) {
-    //only enable post as for the shake of this we dont need other methods
+    //only enable post for the shake of this we dont need other methods
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
