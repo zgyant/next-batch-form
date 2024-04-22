@@ -22,3 +22,4 @@ DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}
 ```
 
 4. Run docker compose up
+![image](https://github.com/zgyant/next-batch-form/assets/65391525/425b5847-275f-439e-b55d-a3d5c77979f8)
