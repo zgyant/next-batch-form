@@ -83,14 +83,14 @@ const BulkSubmitForm: React.FC = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-[400px]">
-        <Select defaultValue='' handleChange={(e) => handleSelectChange('model', e)} label='Model' options={['Model 1', 'Model 2', 'Model 3']}/>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-[500px]">
+        <Select defaultValue='' handleChange={(e) => handleSelectChange('model', e)} label='Model' options={['Model 1', 'Model 2', 'Model 3']} required/>
         <input type="date" id="formDate" name="formDate" value={formData.formDate} min="2018-01-01" max="2030-12-31" onChange={handleChange} className='p-2 rounded-md' required/>
         <input type="number" id="quantity" name="quantity" value={formData.quantity} placeholder='Quantity' onChange={handleChange} className='p-2 rounded-md' required/>
-        <Select defaultValue='' handleChange={(e) => handleSelectChange('licenseLevel', parseInt(e))} label='License Level' options={Array.from({ length: 10 }, (_, index) => index)} />
+        <Select defaultValue='' handleChange={(e) => handleSelectChange('licenseLevel', parseInt(e))} label='License Level' options={Array.from({ length: 10 }, (_, index) => index)} required/>
         <input type="text" id="comment" name="comment" value={formData.comment} placeholder='Comment (Not Required)' onChange={handleChange} className='p-2 rounded-md' />
         
-        <button type="submit" className="bg-customGolden text-white px-4 py-2  rounded-md hover:bg-blue-600">
+        <button type="submit" className="bg-customGolden text-white px-4 py-2  rounded-md hover:bg-blue-600 mt-3">
           Submit
         </button>
 

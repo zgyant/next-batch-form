@@ -13,7 +13,7 @@ const Home: React.FC = () => {
         <title>Batch Form</title>
       </Head>
       <div className='border-2 rounded-md border-solid border-customGolden p-12'>
-        <h4 className="text-2xl font-bold dark:text-white mb-3">Batch Form</h4>
+        <h4 className="text-2xl font-bold dark:text-white mb-5">Batch Form</h4>
         <Form />
       </div>
     </div>
